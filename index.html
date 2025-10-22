@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Dennis Cuadros | Portafolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='assets/css/style.css'>
+  </head>
+ 
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <a href='#' class="logo">
+          <i class='bx bx-code-alt'></i>
+          <span>Base de Datos</span>
+        </a>
+
+        <div class="nav__menu">
+          <button type="button" class="btn btn--close" aria-label="cerrar">
+            <i class='bx bx-x'></i>
+          </button>
+
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href='#hero' class="nav__link"></a>
+            </li>
+            <li class="nav__item">
+              <a href='#about' class="nav__link">Acerca de mi</a>
+            </li>
+            <li class="nav__item">
+              <a href='#works' class="nav__link">Tareas</a>
+            </li>
+            <li class="nav__item">
+              <a href='#contact' class="nav__link"></a>
+            <li class="nav__item">
+              <a href='#contact' class="nav__link"></a>
+            </li>
+          </ul>
+        </div>
+
+        <button type="button" class="btn btn--open" aria-label="abrir">
+          <i class='bx bx-menu'></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="section hero">
+        <div class='container'>
+          <div class='hero__content'>
+            <div>
+              <h1 class='hero__title'>👋🏻 ¡Hola!, soy...<br>
+                <span class="hero__name">Dennis Cuadros</span>
+              </h1>
+              <p class='hero__description'>
+                <span>
+                  <span id="typing" class="hero__typing"></span> .
+                </span>
+                <br> UNIVERSIDDA PERUANA LOS ANDES.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div class='container'>
+          <h2 class='section__title'>⚡ Acerca de Mí</h2>
+          <div class='about__content'>
+            <div class='about__info'>
+              <P>¡Hola! Soy Dennis, estudiante de Ingenieria
+                 de Sistemas y Computacion en la Universidad Peruana los Andes</P>
+            </div>
+            <div class='about__image'>
+              <img src='assets/img/IMG_20240314_115436.jpg' alt='' class="about__img">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="works" class="section section--color works">
+        <!-- Subida de Archivos PDF (visible solo al iniciar sesión) -->
+<section class="upload section" id="upload" style="display: none;">
+  <h2 class="section__title">📂 Subir Archivos PDF</h2>
+  <p class="section__subtitle">Aquí podrás cargar tus materiales en formato PDF.</p>
+
+  <form class="upload__form" id="pdfForm" enctype="multipart/form-data">
+    <div class="form__group">
+      <label for="pdfFile">Selecciona un archivo PDF</label>
+      <input type="file" id="pdfFile" name="pdfFile" accept="application/pdf" required>
+    </div>
+    <button type="submit" class="btn btn--login">Subir PDF</button>
+  </form>
+
+  <div class="uploaded__files">
+    <h3>📑 Archivos Subidos:</h3>
+    <ul id="pdfList"></ul>
+  </div>
+</section>
+
+        <div class='container'>
+          <h2 class='section__title'>Mis proyectos</h2>
+          <p class="section__description">Estos son algunos de mis proyectos en los que he trabajado.</p>
+
+          <div class='works__content'>
+            <!--Card 1-->
+            <div class='works__item'>
+              <div class='works__image'>
+                <img src='assets/img/work-bg.png' alt='img app' class='works_img'>
+              </div>
+              <div class='works__body'>
+                <div class="works__head">
+                  <h3 class='works__title'>Semana #1</h3>
+                  <div class='works__links'>
+                    <a href='#' target="_blank" aria-label="Ir al repositorio">
+                      <i class='bx bxl-github'></i>
+                    </a>
+
+                    <a href='#' target="_blank" aria-label="Ver proyecto">
+                      <i class='bx bx-link-external'></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class='works__skills'>
+                  <span class="works__skill">
+                    <i class='bx bxl-javascript'></i> JavaScript
+                  </span>
+                  <span class="works__skill">
+                    <i class='bx bxl-css3'></i> CSS
+                  </span>
+                  <span class="works__skill">
+                    <i class='bx bxl-html5'></i> HTML
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!--Card 2-->
+            <div class='works__item'>
+              <div class='works__image'>
+                <img src='assets/img/work-bg.png' alt='img app' class='works_img'>
+              </div>
+              <div class='works__body'>
+                <div class="works__head">
+                  <h3 class='works__title'>Semana #2</h3>
+                  <div class='works__links'>
+                    <a href='#' target="_blank" aria-label="Ir al repositorio">
+                      <i class='bx bxl-github'></i>
+                    </a>
+
+                    <a href='#' target="_blank" aria-label="Ver proyecto">
+                      <i class='bx bx-link-external'></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class='works__skills'>
+                  <span class="works__skill">
+                    <i class='bx bxl-javascript'></i> JavaScript
+                  </span>
+                  <span class="works__skill">
+                    <i class='bx bxl-css3'></i> CSS
+                  </span>
+                  <span class="works__skill">
+                    <i class='bx bxl-html5'></i> HTML
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!--Card 3-->
+            <div class='works__item'>
+              <div class='works__image'>
+                <img src='assets/img/work-bg.png' alt='img app' class='works_img'>
+              </div>
+              <div class='works__body'>
+                <div class="works__head">
+                  <h3 class='works__title'>Semana #3</h3>
+                  <div class='works__links'>
+                    <a href='#' target="_blank" aria-label="Ir al repositorio">
+                      <i class='bx bxl-github'></i>
+                    </a>
+
+                    <a href='#' target="_blank" aria-label="Ver proyecto">
+                      <i class='bx bx-link-external'></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class='works__skills'>
+                  <span class="works__skill">
+                    <i class='bx bxl-javascript'></i> JavaScript
+                  </span>
+                  <span class="works__skill">
+                    <i class='bx bxl-css3'></i> CSS
+                  </span>
+                  <span class="works__skill">
+                    <i class='bx bxl-html5'></i> HTML
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!--Card 4-->
+            <div class='works__item'>
+              <div class='works__image'>
+                <img src='assets/img/work-bg.png' alt='img app' class='works_img'>
+              </div>
+              <div class='works__body'>
+                <div class="works__head">
+                  <h3 class='works__title'>Semana #4</h3>
+                  <div class='works__links'>
+                    <a href='#' target="_blank" aria-label="Ir al repositorio">
+                      <i class='bx bxl-github'></i>
+                    </a>
+
+                    <a href='#' target="_blank" aria-label="Ver proyecto">
+                      <i class='bx bx-link-external'></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class='works__skills'>
+                  <span class="works__skill">
+                    <i class='bx bxl-javascript'></i> JavaScript
+                  </span>
+                  <span class="works__skill">
+                    <i class='bx bxl-css3'></i> CSS
+                  </span>
+                  <span class="works__skill">
+                    <i class='bx bxl-html5'></i> HTML
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            </div>
+
+      <section id="contact" class="section">
+        <div class='container'>
+          <h2 class='section__title'>Estamos en contacto.</h2>
+          <p class="section__description"></p>
+
+          <div class='contact__links'>
+            <a class="contact__link" href='https://www.linkedin.com/in/dennis-cuadros-038b5a2a8/' target="_blank" rel="noopener">
+              <i class='bx bxl-linkedin'></i> Contactame
+            </a>
+            <a class="contact__link" href='https://myaccount.microsoft.com/?ref=amc'>
+              <i class='bx bxs-envelope'></i> Enviar correo
+            </a>
+            <a class="contact__link" href='https://github.com/REDHOT18'>
+              <i class='bx bxl-github'></i> Repositorio
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+          </section>
+
+    <!-- Modal Login -->
+    <div id="loginModal" class="modal">
+      <div class="modal__content">
+        <button class="btn btn--close-modal" id="closeLogin" aria-label="Cerrar login">
+          <i class='bx bx-x'></i>
+        </button>
+        <h2 class="modal__title">🔐 Iniciar Sesión</h2>
+        <form class="login__form">
+          <div class="form__group">
+            <label for="user">Usuario</label>
+            <input type="text" id="user" placeholder="Ingresa tu usuario" required>
+          </div>
+          <div class="form__group">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+          </div>
+          <button type="submit" class="btn btn--login">Ingresar</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+      <div class='container'>
+        <p class="copy">🚀</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src='assets/js/index.js'></script>
+    
+  </body>
+</html>
