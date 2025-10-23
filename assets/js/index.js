@@ -1,193 +1,123 @@
-// console.log('Hola desde el archivo index.js')
+/* ====================== NAV MENU ====================== */
+const btnOpen = document.querySelector('.btn--open');
+const btnClose = document.querySelector('.btn--close');
+const navMenu = document.querySelector('.nav__menu');
 
-// console.log('Objeto Window:', window)
+btnOpen.onclick = () => navMenu.classList.toggle('show--menu');
+btnClose.onclick = () => navMenu.classList.remove('show--menu');
+document.querySelectorAll('.nav__link').forEach(link => {
+  link.addEventListener('click', () => navMenu.classList.remove('show--menu'));
+});
 
-// console.log('Navigator:', navigator)
-// console.log(navigator.userAgent)
-
-// console.log('Location:', location)
-
-// window.alert('Hola desde el navegador')
-// window siempre regresa null cuando no se encuentra el elemento
-
-// let nombre = window.prompt('Ingresa tu nombre')
-
-// const nameEl = document.getElementById('nombre')
-
-// nameEl.textContent = nombre || 'Invitado'
-
-// const respuesta = window.confirm('¿Quieres ir a google.com?') // valor booleano true o false
-
-// console.log('Respuesta:', respuesta)
-
-// if (respuesta) {
-//   window.location.href = 'https://google.com'
-// }
-
-// DOM - Document Object Model
-/*
-Window {...
-document: {...}
-...
-}
-*/
-
-console.log('Document:', window.document)
-
-
-console.log(document) // a la página web
-
-// obtener un solo string con las clases del elemento.
-// document.body.className = 'bg-red'
-// reemplaza todas las clases del elemento.
-console.log(document.body.className)
-
-// obtener un arreglo con las clases del elemento.
-console.log(document.body.classList[2])
-console.log(document.body.classList.value)
-document.body.classList.add('bg-red')
-document.body.classList.remove('one')
-
-console.log(document.body.classList)
-
-// Métdos de búsqueda
-// Malas prácticas
-// pokebola.onclick = function () {
-//   alert('Atrapaste un pokemon')
-// }
-
-// getElementById
-// const btnPoke = document.getElementById('poke')
-// buena práctica
-// btnPoke.onclick = function () {
-//   alert('Atrapaste un pokemon')
-// }
-
-// querySelector
-const btnOpen = document.querySelector('.btn--open')
-const btnClose = document.querySelector('.btn--close')
-const navMenu = document.querySelector('.nav__menu')
-console.log(btnOpen)
-
-// Agregar evento por propiedad
-btnOpen.onclick = function () {
-  // navMenu.classList.add('show--menu')
-  navMenu.classList.toggle('show--menu')
-}
-
-btnClose.onclick = function () {
-  navMenu.classList.remove('show--menu')
-}
-
-// Método para manejar eventos
-// addEventListener
-// querySelectorAll
-const links = document.querySelectorAll('.nav__link')
-
-for (const link of links) {
-  link.addEventListener('click', function () {
-    navMenu.classList.remove('show--menu')
-  })
-}
-
-/* Usando la libreria typing.js */
-var typed = new Typed('#typing', {
-  strings: ['Ingenieria De Sistemas y Computacion'],
+/* ====================== TYPING EFFECT ====================== */
+new Typed('#typing', {
+  strings: ['Ingeniería De Sistemas y Computación'],
   typeSpeed: 65,
   loop: true,
   cursorChar: '__'
-})
-/* ======================
-   LOGIN MODAL
-====================== */
-const loginModal = document.getElementById('loginModal');
-const closeLogin = document.getElementById('closeLogin');
+});
 
-// Seleccionamos los links de las semanas
-const semanaLinks = document.querySelectorAll('.works__links a');
+/* ====================== CONFIGURACIÓN DE SEMANAS ====================== */
+// Aquí defines el PDF y descripción de cada semana
+const semanasInfo = {
+  1: {
+    titulo: 'Semana #1',
+    descripcion: 'Manual de Cuenta de GitHub',
+    pdf: 'assets/pdf/Cuenta_GitHub.pdf'
+  },
+  2: {
+    titulo: 'Semana #2',
+    descripcion: 'Instalación de SQL Server 2022',
+    pdf: 'assets/pdf/Manual_Sql_Server.pdf'
+  },
+  3: {
+    titulo: 'Semana #3',
+    descripcion: 'Bases de Datos y Tablas',
+    pdf: 'assets/pdf/Cuadro comprativo_BD.pdf'
+  },
+  4: {
+    titulo: 'Semana #4',
+    descripcion: 'Consultas SQL Básicas',
+    pdf: 'assets/pdf/Simulacion de caso de fallas.pdf'
+  },
+  5: {
+    titulo: 'Semana #5',
+    descripcion: 'Procedimientos Almacenados',
+    pdf: 'assets/pdf/Creación de cuenta en AZURE.pdf'
+  },
+  6: {
+    titulo: 'Semana #6',
+    descripcion: 'Triggers y Vistas',
+    pdf: 'assets/pdf/Triggers_Vistas.pdf'
+  },
+  7: {
+    titulo: 'Semana #7',
+    descripcion: 'Optimización y Seguridad',
+    pdf: 'assets/pdf/Optimizacion.pdf'
+  }
+};
 
-// Cuando den clic en semana 1, 2, 3, 4 -> abrir login
-semanaLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault(); // Evita que abra el enlace
-    loginModal.classList.add('show-modal');
-  });
+/* ====================== GENERAR SEMANAS ====================== */
+const worksContainer = document.querySelector('.works__content');
+
+// Generar tarjetas de semanas dinámicamente
+for (let i = 1; i <= 7; i++) {
+  const weekCard = `
+    <div class='works__item'>
+      <div class='works__image'>
+        <img src='assets/img/work-bg.png' alt='Semana ${i}' class='works_img'>
+      </div>
+      <div class='works__body'>
+        <div class='works__head'>
+          <h3 class='works__title'>${semanasInfo[i].titulo}</h3>
+          <div class='works__links'>
+            <a href='#' class='semana-link' data-semana='${i}' aria-label="Abrir modal">
+              <i class='bx bx-link-external'></i>
+            </a>
+          </div>
+        </div>
+        <p style="margin: 10px 0; color: #666; font-size: 14px;">${semanasInfo[i].descripcion}</p>
+        <div class='works__skills'>
+          <span class='works__skill'><i class='bx bxs-file-pdf'></i> PDF</span>
+          <span class='works__skill'><i class='bx bxs-book-content'></i> Manual</span>
+          <span class='works__skill'><i class='bx bxs-data'></i> SQL</span>
+        </div>
+      </div>
+    </div>`;
+  worksContainer.innerHTML += weekCard;
+}
+
+/* ====================== MODAL MANUAL SQL ====================== */
+const modalManual = document.getElementById('modalManual');
+const closeManual = document.getElementById('closeManual');
+
+// Abrir modal con el PDF correspondiente a cada semana
+document.addEventListener('click', e => {
+  if (e.target.closest('.semana-link')) {
+    e.preventDefault();
+    
+    // Obtener el número de semana
+    const semanaNum = e.target.closest('.semana-link').dataset.semana;
+    const info = semanasInfo[semanaNum];
+    
+    // Actualizar el contenido del modal
+    const modalTitle = document.querySelector('#modalManual .modal__title');
+    const modalDescription = document.querySelector('#modalManual p');
+    const pdfLink = document.querySelector('#modalManual .btn--login');
+    
+    modalTitle.textContent = `📘 ${info.titulo}`;
+    modalDescription.textContent = `${info.descripcion} - Revisa el manual paso a paso.`;
+    pdfLink.href = info.pdf;
+    
+    // Mostrar el modal
+    modalManual.classList.add('show-modal');
+  }
 });
 
 // Cerrar modal
-closeLogin.onclick = function() {
-  loginModal.classList.remove('show-modal');
-}
-
-// Cerrar si clickea fuera del contenido
-window.onclick = function(e) {
-  if (e.target === loginModal) {
-    loginModal.classList.remove('show-modal');
+closeManual.onclick = () => modalManual.classList.remove('show-modal');
+window.onclick = e => { 
+  if (e.target === modalManual) {
+    modalManual.classList.remove('show-modal');
   }
-}
-/* ======================
-   MANEJO DE SUBIDA DE PDF
-====================== */
-const uploadSection = document.getElementById('upload');
-const pdfForm = document.getElementById("pdfForm");
-const pdfList = document.getElementById("pdfList");
-
-// ✅ Simulación de login correcto (puedes cambiar la validación con SQL/PHP más adelante)
-document.getElementById("loginForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const user = document.getElementById("user").value;
-  const pass = document.getElementById("password").value;
-
-  if (user === "dennis" && pass === "12345") {
-    alert("✅ Login exitoso");
-    loginModal.classList.remove('show-modal');
-    uploadSection.style.display = "block"; // Mostrar sección de PDFs
-  } else {
-    alert("❌ Usuario o contraseña incorrectos");
-  }
-});
-
-// 📂 Subida de PDF
-pdfForm.addEventListener("submit", function(e) {
-  e.preventDefault();
-  
-  const fileInput = document.getElementById("pdfFile");
-  const file = fileInput.files[0];
-
-  if (file && file.type === "application/pdf") {
-    const li = document.createElement("li");
-    li.innerHTML = `<a href="${URL.createObjectURL(file)}" target="_blank">${file.name}</a>`;
-    pdfList.appendChild(li);
-    fileInput.value = ""; // reset
-  } else {
-    alert("⚠️ Solo se permiten archivos PDF");
-  }
-});
-
-
-// const document = {
-//   doctype: {},
-//   documentElement: { // html
-//     body: {
-//       firstChild: {},
-//       lastChild: {},
-//       classList: {
-//         add: () => { },
-//         remove: () => { },
-//         toggle: () => { },
-//       },
-//       style: {
-//         color: '',
-//         backgroundColor: '',
-//         // ...
-//       },
-//       children: []
-//     }
-//   },
-//   head: {},
-// },
-//   body: {},
-//   head: {},
-//   //...
-// }
+};

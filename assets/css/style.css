@@ -556,3 +556,29 @@ span.hero__typing {
   border: 1px solid #ddd;
   border-radius: 8px;
 }
+/* ======================
+   MODAL MANUAL SQL
+====================== */
+#modalManual .modal__title {
+  color: var(--primary);
+  font-size: 26px;
+  text-align: center;
+}
+
+#modalManual p {
+  font-size: 18px;
+  color: #444;
+}
+
+#modalManual .btn--login {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 10px 20px;
+  transition: 0.3s ease;
+}
+
+#modalManual .btn--login:hover {
+  background: #07a387;
+}
